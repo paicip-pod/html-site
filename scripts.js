@@ -30,16 +30,6 @@ function copyToClipboard() {
         document.body.appendChild(textarea);
         textarea.select();
         try {
-            Swal.fire({
-                title: 'Failure!',
-                text: 'Error copying RSS Feed to clipboard',
-                icon: 'error',
-                timer: 1800,
-                timerProgressBar: true,
-                showCancelButton: false,
-                showCloseButton: false,
-                showConfirmButton: false
-              });
             return document.execCommand("copy");  // Security exception may be thrown by some browsers.
         }
         catch (ex) {
@@ -55,6 +45,16 @@ function copyToClipboard() {
             });
         }
         finally {
+            Swal.fire({
+                title: 'Success!',
+                text: 'RSS Feed successfully copied to clipboard',
+                icon: 'success',
+                timer: 1800,
+                timerProgressBar: true,
+                showCancelButton: false,
+                showCloseButton: false,
+                showConfirmButton: false
+              });
             document.body.removeChild(textarea);
         }
     }
