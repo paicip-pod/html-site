@@ -1,28 +1,6 @@
 function copyToClipboard() {
   if (navigator.permissions) {
-    navigator.clipboard.writeText("https://media.rss.com/paicip-pod/feed.xml").then((f) => {
-        Swal.fire({
-          title: "Success!",
-          text: "navigator success",
-          icon: "success",
-          timer: 1800,
-          timerProgressBar: true,
-          showCancelButton: false,
-          showCloseButton: false,
-          showConfirmButton: false,
-        });
-      }).catch((err) => {
-        Swal.fire({
-          title: "Failure!",
-          text: "navigator failure",
-          icon: "error",
-          timer: 1800,
-          timerProgressBar: true,
-          showCancelButton: false,
-          showCloseButton: false,
-          showConfirmButton: false,
-        });
-      });
+    navigator.clipboard.writeText("https://media.rss.com/paicip-pod/feed.xml").then(f => success()).catch(e => err());
   } else {
     try {
       var textarea = document.createElement("textarea");
@@ -33,39 +11,36 @@ function copyToClipboard() {
       let result = document.execCommand("copy"); // Security exception may be thrown by some browsers.
       document.body.removeChild(textarea);
       if (result) {
-        Swal.fire({
-          title: "Success!",
-          text: "exec copy success",
-          icon: "success",
-          timer: 1800,
-          timerProgressBar: true,
-          showCancelButton: false,
-          showCloseButton: false,
-          showConfirmButton: false,
-        });
+        success();
       } else {
-        Swal.fire({
-          title: "Failure!",
-          text: "exec copy failure",
-          icon: "error",
-          timer: 1800,
-          timerProgressBar: true,
-          showCancelButton: false,
-          showCloseButton: false,
-          showConfirmButton: false,
-        });
+        err();
       }
     } catch (ex) {
-      Swal.fire({
-        title: "Failure!",
-        text: "exec copy catch",
-        icon: "error",
-        timer: 1800,
-        timerProgressBar: true,
-        showCancelButton: false,
-        showCloseButton: false,
-        showConfirmButton: false,
-      });
+      err();
     }
   }
+}
+function success() {
+  Swal.fire({
+    title: "Success!",
+    text: 'RSS Feed successfully copied to clipboard',
+    icon: "success",
+    timer: 1800,
+    timerProgressBar: true,
+    showCancelButton: false,
+    showCloseButton: false,
+    showConfirmButton: false,
+  });
+}
+function err() {
+  Swal.fire({
+    title: "Failure!",
+    text: 'Error copying RSS Feed to clipboard',
+    icon: "error",
+    timer: 1800,
+    timerProgressBar: true,
+    showCancelButton: false,
+    showCloseButton: false,
+    showConfirmButton: false,
+  });
 }
