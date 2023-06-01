@@ -1,5 +1,6 @@
 function copyToClipboard() {
-    if (navigator.clipboard) {
+    if (document.navigator.clipboard) {
+        console.log('there');
       navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
         Swal.fire({
           title: 'Success!',
@@ -24,6 +25,7 @@ function copyToClipboard() {
         });
       });
     } else {
+        console.log('h000ere');
         Swal.fire({
             text: 'here'
         })
