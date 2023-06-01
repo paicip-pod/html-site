@@ -32,6 +32,7 @@ function copyToClipboard() {
             document.body.appendChild(textarea);
             textarea.select();
             let result = document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            document.body.removeChild(textarea);
             if (result) {
                 Swal.fire({
                     title: 'Success!',
@@ -43,7 +44,7 @@ function copyToClipboard() {
                     showCloseButton: false,
                     showConfirmButton: false
                   });
-                document.body.removeChild(textarea);
+              
             } else {
                 Swal.fire({
                     title: 'Failure!',
