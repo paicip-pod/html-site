@@ -11,9 +11,11 @@ function copyToClipboard() {
             showConfirmButton: false
         });
     }).catch(err => {
+        
         Swal.fire({
             title: 'Failure!',
-            text: 'Error copying RSS Feed to clipboard',
+            text: err,
+            //text: 'Error copying RSS Feed to clipboard',
             icon: 'error',
             timer: 1800,
             timerProgressBar: true,
