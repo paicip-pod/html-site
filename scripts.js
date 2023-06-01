@@ -30,17 +30,17 @@ function copyToClipboard() {
         document.body.appendChild(textarea);
         textarea.select();
         try {
-            document.execCommand("copy");  // Security exception may be thrown by some browsers.
             Swal.fire({
-              title: 'Failure!',
-              text: 'Error copying RSS Feed to clipboard',
-              icon: 'error',
-              timer: 1800,
-              timerProgressBar: true,
-              showCancelButton: false,
-              showCloseButton: false,
-              showConfirmButton: false
-            });
+                title: 'Failure!',
+                text: 'Error copying RSS Feed to clipboard',
+                icon: 'error',
+                timer: 1800,
+                timerProgressBar: true,
+                showCancelButton: false,
+                showCloseButton: false,
+                showConfirmButton: false
+              });
+            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
         }
         catch (ex) {
             Swal.fire({
