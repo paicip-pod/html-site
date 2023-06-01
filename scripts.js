@@ -3,7 +3,7 @@ function copyToClipboard() {
       navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
         Swal.fire({
           title: 'Success!',
-          text: 'RSS Feed successfully copied to clipboard',
+          text: 'navigator succerss',
           icon: 'success',
           timer: 1800,
           timerProgressBar: true,
@@ -14,7 +14,7 @@ function copyToClipboard() {
       }).catch(err => {
         Swal.fire({
           title: 'Failure!',
-          text: 'Error copying RSS Feed to clipboard',
+          text: 'this error', //'Error copying RSS Feed to clipboard',
           icon: 'error',
           timer: 1800,
           timerProgressBar: true,
@@ -35,7 +35,7 @@ function copyToClipboard() {
         catch (ex) {
             Swal.fire({
                 title: 'Failure!',
-                text: 'Error copying RSS Feed to clipboard',
+                text: 'that errpr',
                 icon: 'error',
                 timer: 1800,
                 timerProgressBar: true,
@@ -47,7 +47,7 @@ function copyToClipboard() {
         finally {
             Swal.fire({
                 title: 'Success!',
-                text: 'RSS Feed successfully copied to clipboard',
+                text: 'finally',
                 icon: 'success',
                 timer: 1800,
                 timerProgressBar: true,
