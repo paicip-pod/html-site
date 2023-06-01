@@ -25,13 +25,37 @@ function copyToClipboard() {
             });
           });
         } else {
-          var textarea = document.createElement("textarea");
-          textarea.textContent = 'https://media.rss.com/paicip-pod/feed.xml';
-          textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
-          document.body.appendChild(textarea);
-          textarea.select();
           try {
-            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            var textarea = document.createElement("textarea");
+            textarea.textContent = 'https://media.rss.com/paicip-pod/feed.xml';
+            textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            let result = document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            if (result) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'finally',
+                    icon: 'success',
+                    timer: 1800,
+                    timerProgressBar: true,
+                    showCancelButton: false,
+                    showCloseButton: false,
+                    showConfirmButton: false
+                  });
+                document.body.removeChild(textarea);
+            } else {
+                Swal.fire({
+                    title: 'Failure!',
+                    text: 'else',
+                    icon: 'error',
+                    timer: 1800,
+                    timerProgressBar: true,
+                    showCancelButton: false,
+                    showCloseButton: false,
+                    showConfirmButton: false
+                  });
+            }
           }
           catch (ex) {
             Swal.fire({
@@ -44,19 +68,6 @@ function copyToClipboard() {
               showCloseButton: false,
               showConfirmButton: false
             });
-          }
-          finally {
-            Swal.fire({
-                title: 'Success!',
-                text: 'finally',
-                icon: 'success',
-                timer: 1800,
-                timerProgressBar: true,
-                showCancelButton: false,
-                showCloseButton: false,
-                showConfirmButton: false
-              });
-            document.body.removeChild(textarea);
           }
         }
     }).catch(err => {
