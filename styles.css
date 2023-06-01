@@ -1,0 +1,48 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+.holder {
+    background-color: #faf8ef;
+    width: 100vw;
+    padding: 1rem !important;
+    margin: 0rem !important;
+}
+
+h5 {
+    color: #343a40;
+}
+
+.mt-4 {
+    margin: 1rem;
+}
+
+.mt-5 {
+    margin-top: 0rem !important;
+}
+
+.media-body {
+    text-align: center;
+}
+
+.socials {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+i.fa {
+    margin-right: 0.3rem;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-rounded {
+    border-radius: 50%;
+}
