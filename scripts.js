@@ -1,5 +1,6 @@
 function copyToClipboard() {
     if (navigator) {
+        console.log('navigator')
         navigator.permissions.query({name: "clipboard-write"}).then((result) => {
             if (result.state === 'granted') {
               navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
@@ -85,6 +86,7 @@ function copyToClipboard() {
               });
         });
     } else {
+        alert('no navigator')
         Swal.fire({
             title: 'Failure!',
             text: 'catch permission',
