@@ -59,5 +59,16 @@ function copyToClipboard() {
             document.body.removeChild(textarea);
           }
         }
-    }).catch(err => err);
+    }).catch(err => {
+        Swal.fire({
+            title: 'Failure!',
+            text: 'catch permission',
+            icon: 'error',
+            timer: 1800,
+            timerProgressBar: true,
+            showCancelButton: false,
+            showCloseButton: false,
+            showConfirmButton: false
+          });
+    });
 }
