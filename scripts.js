@@ -1,5 +1,5 @@
 function copyToClipboard() {
-    if (navigator.clipboard) {
+    if (navigator) {
       navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
         Swal.fire({
           title: 'Success!',
