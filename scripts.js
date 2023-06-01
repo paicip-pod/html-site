@@ -1,5 +1,15 @@
 function copyToClipboard() {
     navigator.permissions.query({name: "clipboard-write"}).then((result) => {
+        Swal.fire({
+            title: 'Success!',
+            text: 'navigator',
+            icon: 'success',
+            timer: 1800,
+            timerProgressBar: true,
+            showCancelButton: false,
+            showCloseButton: false,
+            showConfirmButton: false
+          });
         if (result.state === 'granted') {
           navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
             Swal.fire({
