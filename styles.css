@@ -24,14 +24,11 @@ h5 {
 }
 
 .socials {
+    height: 38px;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-i.fa {
-    margin-right: 0.3rem;
 }
 
 .footer {
@@ -45,4 +42,5 @@ a {
 
 .btn-rounded {
     border-radius: 50%;
+    padding: 10px 12px 10px 12px;
 }
