@@ -14,7 +14,7 @@ function copyToClipboard() {
       }).catch(err => {
         Swal.fire({
           title: 'Failure!',
-          text: 'this error', //'Error copying RSS Feed to clipboard',
+          text: 'this errhor', //'Error copying RSS Feed to clipboard',
           icon: 'error',
           timer: 1800,
           timerProgressBar: true,
@@ -35,7 +35,7 @@ function copyToClipboard() {
         catch (ex) {
             Swal.fire({
                 title: 'Failure!',
-                text: 'that errpr',
+                text: 'that erhrpr',
                 icon: 'error',
                 timer: 1800,
                 timerProgressBar: true,
