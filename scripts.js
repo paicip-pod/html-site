@@ -1,6 +1,5 @@
 function copyToClipboard() {
-    if (false) {
-        console.log('there');
+    if (navigator.clipboard) {
       navigator.clipboard.writeText('https://media.rss.com/paicip-pod/feed.xml').then(f => {
         Swal.fire({
           title: 'Success!',
@@ -31,11 +30,29 @@ function copyToClipboard() {
         document.body.appendChild(textarea);
         textarea.select();
         try {
-            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            Swal.fire({
+              title: 'Failure!',
+              text: 'Error copying RSS Feed to clipboard',
+              icon: 'error',
+              timer: 1800,
+              timerProgressBar: true,
+              showCancelButton: false,
+              showCloseButton: false,
+              showConfirmButton: false
+            });
         }
         catch (ex) {
-            console.warn("Copy to clipboard failed.", ex);
-            return prompt("Copy to clipboard: Ctrl+C, Enter", text);
+            Swal.fire({
+                title: 'Failure!',
+                text: 'Error copying RSS Feed to clipboard',
+                icon: 'error',
+                timer: 1800,
+                timerProgressBar: true,
+                showCancelButton: false,
+                showCloseButton: false,
+                showConfirmButton: false
+            });
         }
         finally {
             document.body.removeChild(textarea);
