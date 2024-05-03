@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A page that displays a list of social media accounts for the podcast as well as the services you can liston on">
     <title>Paicip Links</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo-no-background.png"> 
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -79,6 +81,15 @@ function err(type) {
   });
 }
     </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7M9TK68RJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7M9TK68RJ');
+</script>
 </head>
 
 <body>
@@ -86,7 +97,7 @@ function err(type) {
         <div class="media mt-5">
             <div class="media-body m-2">
                 <img src="assets/logo-no-background.png" class="m-3" alt="image" width="150px" height="150px">
-                <h5 class="align-items-center mt-2">Paicip Podcast Links</h5>
+                <h1 class="align-items-center mt-2">Paicip Podcast Links</h1>
             </div>
         </div>
         <div class="socials">
@@ -99,8 +110,8 @@ function err(type) {
             <a href="https://fantasy.premierleague.com/leagues/auto-join/40wfm2" target="_blank" class="btn btn-outline-dark btn-rounded"><i class="fa-solid fa-futbol"></i></a>
         </div>
         <div class="mt-4">
-            <a href="https://www.patreon.com/PAICIPPodcast" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-patreon">&nbsp;</i>Patreon</a>
-            <br>
+            <!--<a href="https://www.patreon.com/PAICIPPodcast" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-patreon">&nbsp;</i>Patreon</a>
+            <br>-->
             <button class="btn btn-outline-dark btn-block" role="button" onclick="copyRssToClipboard()"><i class="fas fa-rss">&nbsp;</i>Copy RSS Feed</button>
             <br>
             <a href="https://www.youtube.com/@paicippodcast" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-youtube">&nbsp;</i>Youtube</a>
